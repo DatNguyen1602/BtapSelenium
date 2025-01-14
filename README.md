@@ -1,64 +1,63 @@
 # BTapSelenium - Nguyễn Tiến Đạt - 22IT-SE1.1
 
-## Mục tiêu của dự án
+## Mô tả dự án
+Bài tập này được thiết kế để kiểm thử tự động một trang web bằng Selenium, nhằm kiểm tra các chức năng cơ bản như đăng ký tài khoản và xử lý lỗi đầu vào. Mục tiêu chính là giúp sinh viên làm quen với việc viết script kiểm thử tự động và hiểu rõ quy trình kiểm thử phần mềm.
 
-Bài tập này yêu cầu sử dụng Selenium để kiểm thử tự động một trang web. Mục tiêu chính bao gồm:
-
-- Hiểu rõ quy trình kiểm thử tự động.
-- Thực hành viết script kiểm thử bằng Selenium.
-- Kiểm thử các chức năng cơ bản của trang web như đăng ký tài khoản, kiểm tra tính hợp lệ của dữ liệu nhập vào.
-
----
-
-## Cách sử dụng
-
-### Chạy kiểm thử tự động
-
-1. Mở Visual Studio Code hoặc IDE bạn chọn.
-2. Đảm bảo tất cả các công cụ và thư viện cần thiết đã được cài đặt (hướng dẫn cài đặt bên dưới).
-3. Chạy file kiểm thử bằng lệnh:
-   ```bash
-   python test_registration.py
-   ```
-4. Kết quả kiểm thử sẽ được in ra console, ví dụ:
-   ```
-   Bắt đầu kiểm thử...
-   Test đăng ký thành công: PASSED
-   Test email không hợp lệ: PASSED
-   ```
-
----
+## Cấu trúc thư mục
+```
+project-directory/
+|-- tests/
+|   |-- test_registration_success.py  # Kiểm thử đăng ký thành công
+|   |-- test_registration_invalid_email.py  # Kiểm thử lỗi định dạng email
+|-- requirements.txt  # Danh sách các thư viện cần thiết
+|-- README.md  # Tài liệu hướng dẫn dự án
+```
 
 ## Hướng dẫn cài đặt
+1. **Cài đặt Python**: Đảm bảo Python 3.8 trở lên đã được cài đặt trên hệ thống của bạn.
+2. **Cài đặt các thư viện cần thiết**:
+   - Chạy lệnh sau trong terminal để cài đặt Selenium và các phụ thuộc:
+     ```bash
+     pip install -r requirements.txt
+     ```
+   - Nội dung file `requirements.txt`:
+     ```
+     selenium
+     ```
+3. **Cài đặt trình duyệt và WebDriver**:
+   - Tải Google Chrome (nếu chưa có).
+   - Tải ChromeDriver phiên bản tương thích với trình duyệt từ [ChromeDriver Downloads](https://chromedriver.chromium.org/downloads).
+   - Thêm đường dẫn của ChromeDriver vào biến môi trường `PATH`.
 
-### Bước 1: Cài đặt Python
-- Tải và cài đặt Python tại [python.org](https://www.python.org/downloads/).
-- Kiểm tra phiên bản đã cài đặt:
-  ```bash
-  python --version
-  ```
+## Hướng dẫn sử dụng
+1. **Chạy kiểm thử**:
+   - Sử dụng lệnh sau để chạy bài kiểm thử đăng ký thành công:
+     ```bash
+     python tests/test_registration_success.py
+     ```
+   - Chạy bài kiểm thử email không hợp lệ:
+     ```bash
+     python tests/test_registration_invalid_email.py
+     ```
+2. **Xem kết quả**:
+   - Kết quả kiểm thử sẽ được hiển thị trên terminal, bao gồm thông báo thành công hoặc chi tiết lỗi (nếu có).
 
-### Bước 2: Cài đặt Selenium
-- Cài đặt thư viện Selenium bằng lệnh:
-  ```bash
-  pip install selenium
-  ```
+## Yêu cầu hệ thống
+- **Phần mềm**:
+  - Python 3.8 trở lên
+  - Google Chrome phiên bản mới nhất
+  - ChromeDriver tương ứng
+- **Phần cứng**:
+  - RAM: Tối thiểu 4GB
+  - Bộ xử lý: CPU Dual-Core hoặc tốt hơn
+  - Hệ điều hành: Windows, macOS hoặc Linux
 
-### Bước 3: Cài đặt ChromeDriver
-- Xác định phiên bản trình duyệt Chrome của bạn.
-- Tải ChromeDriver tương ứng tại [ChromeDriver Downloads](https://chromedriver.chromium.org/downloads).
-- Đặt đường dẫn đến ChromeDriver trong biến môi trường hoặc đảm bảo file `chromedriver` nằm trong thư mục hiện tại.
 
-### Bước 4: Tạo và chạy dự án trong Visual Studio Code
-1. Mở Visual Studio Code.
-2. Tạo một file Python mới, ví dụ `test_registration.py`.
-3. Sao chép và dán mã kiểm thử từ phần bên dưới vào file.
-4. Chạy file bằng lệnh:
-   ```bash
-   python test_registration.py
-   ```
+
+`
 
 ---
+
 
 ## Mã kiểm thử
 
